@@ -41,7 +41,7 @@ public class GameController {
             //跳過多少筆資料
             @RequestParam(defaultValue = "0") @Min(0) Integer offset
 
-            ) {
+    ) {
         GameQueryParams gameQueryParams = new GameQueryParams();
         gameQueryParams.setGameLavel(gameLavel);
         gameQueryParams.setSearch(search);
@@ -51,7 +51,7 @@ public class GameController {
         gameQueryParams.setOffset(offset);
 
         //取得 Game List;
-        List<ViewGame> viewGameList= gameService.getViewGames(gameQueryParams);
+        List<ViewGame> viewGameList = gameService.getViewGames(gameQueryParams);
 
         //取得 Game 總數;
         Integer total = gameService.countGames(gameQueryParams);
@@ -94,7 +94,7 @@ public class GameController {
 
         Game game = gameService.getGameById(gameId);
 
-        return  ResponseEntity.status(HttpStatus.CREATED).body(game);
+        return ResponseEntity.status(HttpStatus.CREATED).body(game);
     }
 
     @PutMapping("/updategames/{gameId}")

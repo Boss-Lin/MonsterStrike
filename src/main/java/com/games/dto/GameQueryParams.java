@@ -14,6 +14,4 @@ public class GameQueryParams {
     private String sort;
     private Integer limit;
     private Integer offset;
-
-
 }

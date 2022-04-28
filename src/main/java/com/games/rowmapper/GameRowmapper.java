@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class GameRowmapper implements RowMapper<Game> {
-    
+
     @Override
     public Game mapRow(ResultSet resultSet, int i) throws SQLException {
         Game game = new Game();
@@ -29,6 +29,7 @@ public class GameRowmapper implements RowMapper<Game> {
 
 //        game.setCreateName(resultSet.getString("create_name"));
 //        game.setUpdateName(resultSet.getString("update_name"));
+
         return game;
     }
 }

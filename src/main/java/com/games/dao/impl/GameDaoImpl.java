@@ -50,7 +50,7 @@ public class GameDaoImpl implements GameDao {
 
     @Override
     public List<ViewGame> getViewGames(GameQueryParams gameQueryParams) {
-        String sql ="SELECT game_id, game_name, game_lavel, create_name, create_time, update_name, update_time FROM monsterstrike.view_game WHERE 1=1";
+        String sql = "SELECT game_id, game_name, game_lavel, create_name, create_time, update_name, update_time FROM monsterstrike.view_game WHERE 1=1";
 
         Map<String, Object> map = new HashMap<>();
 
@@ -89,7 +89,7 @@ public class GameDaoImpl implements GameDao {
 
         List<ViewGame> viewGameList = namedParameterJdbcTemplate.query(sql, map, new ViewGameRowmapper());
 
-        if (viewGameList.size() > 0 ) {
+        if (viewGameList.size() > 0) {
             return viewGameList.get(0);
         } else {
             return null;
